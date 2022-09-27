@@ -20,9 +20,13 @@ connection.once('open', () => {
 })
 
 const eventsRouter = require('./routes/events');
+const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/users');
 
 app.use('/events',eventsRouter);
+app.use('/api/users',userRoutes);
+app.use('/api/auth',authRoutes);
 
 app.listen(port, () => {
-    console.log('Server is running on port: ${port}');
+    console.log('Server is running on port: ${port}...');
 });
