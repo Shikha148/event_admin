@@ -5,15 +5,10 @@ import Navbar from "./navbar.component";
 
 const Event = props => (
   <tr>
-    <td>{props.event.topic}</td>
-    <td>{props.event.domain}</td>
-    <td>{props.event.date.substring(0,10)}</td>
-    <td>{props.event.start_time}</td>
-    <td>{props.event.end_time}</td>
-    <td>
-      <Link to={"/editevent/"+props.event._id}>edit</Link> | 
-      <a href="#" onClick={() => { if(window.confirm("do you really want to delete?")===true){props.deleteEvent(props.event._id) }}}> delete</a> 
-    </td>
+    <td>{props.event.username}</td>
+    <td>{props.event.email}</td>
+    <td>{props.event.phone}</td>
+    <td>{props.event.prof}</td>
   </tr>
 )
 
@@ -21,14 +16,14 @@ export default class EventsList extends Component {
   constructor(props) {
     super(props);
 
-    this.deleteEvent = this.deleteEvent.bind(this)
+    // this.deleteEvent = this.deleteEvent.bind(this)
 
     this.state = {events : []};
   }
 
   componentDidMount() {
     
-    axios.get('http://localhost:5000/events/')
+    axios.get('http://localhost:5000/api/regi')
       .then(response => {
         this.setState({ events: response.data })
       })
@@ -38,16 +33,16 @@ export default class EventsList extends Component {
     
   }
 
-  deleteEvent(id) {
+  // deleteEvent(id) {
    
-    axios.delete('http://localhost:5000/events/'+id)
-      .then(response => { console.log(response.data)});
+  //   axios.delete('http://localhost:5000/events/'+id)
+  //     .then(response => { console.log(response.data)});
 
-    this.setState({
-      events: this.state.events.filter(el => el._id !== id)
-    })
+  //   this.setState({
+  //     events: this.state.events.filter(el => el._id !== id)
+  //   })
   
-  }
+  // }
 
   eventList() {
     return this.state.events.map(currentevent => {
@@ -59,15 +54,14 @@ export default class EventsList extends Component {
     return (
       <div>
          <Navbar/>
-        <h3>Conference Details</h3>
+        <h3>Logged Events</h3>
         <table className="table">
           <thead className="thead-light">
             <tr>
-              <th>Topic</th>
-              <th>Domain</th>
-              <th>Date</th>
-              <th>Start time</th>
-              <th>End time</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Profession</th>
             </tr>
           </thead>
           <tbody>

@@ -7,6 +7,7 @@ import domaindata from './Domain.json';
 import DatePicker from 'react-datepicker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Row, Col,Card } from 'react-bootstrap';
+import Navbar from "./navbar.component";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -341,6 +342,7 @@ export default class CreateEvents extends Component{
 
         return (
           <div>
+            <Navbar/>
               <h3>Add event</h3>
               <form onSubmit={this.onSubmit}>
                 <div className="h-100 " style={{backgroundcolor: "#000"}}>

@@ -9,7 +9,8 @@ export default class Navbar extends Component {
   
       const handleLogout = () => {
         localStorage.removeItem("token");
-        window.location.reload();
+        //window.location.reload();
+        window.location = '/login';
       };
     
     return (
@@ -29,6 +30,14 @@ export default class Navbar extends Component {
           <li className="navbar-item">
           <Link to="/createEvent" className="nav-link">Create Event</Link>
           </li>
+
+           <li className="navbar-item">
+          <Link to="/viewUsers" className="nav-link">View Users</Link>
+          </li> 
+
+          <li className="navbar-item">
+          <Link to="/viewFeedbacks" className="nav-link">View Feedbacks</Link>
+          </li> 
           
           
         </ul>

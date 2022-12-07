@@ -11,7 +11,7 @@ const Login = () => {
 
 	
 	
-				   const characters ='ABCDEFGHIJKLMNOPQRSTabcdefghijklmnopqrst0123456789!@#$%^&*';
+				   const characters ='ABCDEFGHIJKLMNOPQRSTabcdefghijklmnopqrst0123456789';
 				   function generateString(length) 
 				   {
 					   let result = '';

@@ -6,7 +6,8 @@ import Navbar from "./components/navbar.component"
 import EditEvent from "./components/edit-event.component";
 import CreateEvent from "./components/create-event.component";
 import EventList from "./components/events-list.component";
-
+import ViewUsers from "./components/viewUsers";
+import ViewFeedbacks from "./components/viewFeedback";
 import Main from "./components/Main";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
@@ -28,6 +29,8 @@ function App() {
         {user && <Route path="/editevent/:id" render element={<EditEvent/>} />}
         {user && <Route path ="/createEvent" element={<CreateEvent/>}/>}
         {user && <Route path ='/eventList' element={<EventList/>} />}
+        {user && <Route path ='/viewUsers' element={<ViewUsers/>} />}
+        {user && <Route path ='/viewFeedbacks' element={<ViewFeedbacks/>} />}
       </Routes>
       </div>
     </Router>

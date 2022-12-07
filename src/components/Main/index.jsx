@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
-import Navbar from "C:/Users/SHIKHA/vs-apps/mern-exercise-tracker/src/components/navbar.component.js";
-import EventsList from "C:/Users/SHIKHA/vs-apps/mern-exercise-tracker/src/components/events-list.component.js";
+import Navbar from "../navbar.component";
+import EventsList from "../events-list.component";
 
 const Main = () => {
 	const handleLogout = () => {
@@ -11,7 +11,6 @@ const Main = () => {
 
 	return (
         <div>
-      <Navbar/>
       
       <EventsList/>
       </div>
